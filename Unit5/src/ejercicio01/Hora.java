@@ -20,7 +20,7 @@ public class Hora {
 	}
 	
 	/**
-	 * 
+	 * Funcion para incrementar los minutos en uno
 	 */
 	void inc() {	
 		minuto++;
@@ -28,19 +28,39 @@ public class Hora {
 			minuto = 0;
 			hora++;
 		}
-		if(hora == 24) {
-			
+		if(hora == 24) {	
 			hora = 0;	
 		}		
 	}
 	
+	/**
+	 * Funcion para cambiar los minutos de la hora
+	 * @param minutos
+	 * @return
+	 */
 	boolean setMinutos(int minutos) {
 		
+		boolean esPosible = false;
 		
-		return true;
+		if(minutos < 60 && minutos >= 0) {
+			
+			minuto = minutos;
+			
+			esPosible = true;
+		}
+
+		return esPosible;
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
+	boolean setHoras(int horas) {
+		
+		
+		
+	}
 	
 	
 	
