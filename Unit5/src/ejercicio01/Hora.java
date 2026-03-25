@@ -2,8 +2,8 @@ package ejercicio01;
 
 public class Hora {
 
-	private int minuto;
-	private int hora;
+	protected int minuto;
+	protected int hora;
 	
 	/**
 	 * Contructor inicial
@@ -18,6 +18,16 @@ public class Hora {
 		}
 
 	}
+	
+	public int getMinuto() {
+		return minuto;
+	}
+
+
+	public int getHora() {
+		return hora;
+	}
+
 	
 	/**
 	 * Funcion para incrementar los minutos en uno
@@ -35,16 +45,16 @@ public class Hora {
 	
 	/**
 	 * Funcion para cambiar los minutos de la hora
-	 * @param minutos
+	 * @param minuto
 	 * @return
 	 */
-	boolean setMinutos(int minutos) {
+	public boolean setMinuto(int minuto) {
 		
 		boolean esPosible = false;
 		
-		if(minutos < 60 && minutos >= 0) {
+		if(minuto < 60 && minuto >= 0) {
 			
-			minuto = minutos;
+			this.minuto = minuto;
 			
 			esPosible = true;
 		}
@@ -53,13 +63,24 @@ public class Hora {
 	}
 	
 	/**
-	 * 
+	 * Funcion para cambiar las horas de la hora
 	 * @return
 	 */
-	boolean setHoras(int horas) {
+	public boolean setHora(int hora) {
 		
+		boolean esPosible = false;
 		
+		if (hora < 24 && hora >= 0) {
+			this.hora = hora;
+			esPosible = true;
+		}
 		
+		return esPosible;
+	}
+
+	@Override
+	public String toString() {
+		return hora + ":" + minuto;
 	}
 	
 	
