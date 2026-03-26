@@ -10,11 +10,19 @@ public class Hora {
 	 * @param minuto
 	 * @param hora
 	 */
-	public Hora(int minuto, int hora) {
-		super();
-		if(minuto < 60 && minuto >= 0 && hora < 24 && hora >= 0) {
-			this.minuto = minuto;
+	public Hora(int hora, int minuto) {
+		
+		if(minuto < 60 && minuto >= 0) {
+			this.minuto = minuto;		
+		} else {
+			throw new IllegalArgumentException("ERROR: los minutos debe estar comprendida entre 0 y 59");
+		}
+		
+		if(hora < 24 && hora >= 0) {
 			this.hora = hora;
+		} else {
+			throw new IllegalArgumentException("ERROR: la hora debe estar comprendida entre 0 y 24");
+			
 		}
 
 	}
