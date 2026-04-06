@@ -79,6 +79,10 @@ public class Electrodomestico {
 		this.peso = peso;
 	}
 	
+	/**
+	 * Metodo para comprobar si el consumo energetico introducido es correcto
+	 * @param letra de consumo energetico
+	 */
 	public void comprobarConsumoEnergetico(char letra) {
 		char resultado = 'F';
 		char letraMayus = Character.toUpperCase(letra);
@@ -91,6 +95,10 @@ public class Electrodomestico {
 		this.consumoEnergetico = resultado;
 	}
 	
+	/**
+	 * Metodo para comprbar si el color introducido es correcto
+	 * @param color del electrodomestico
+	 */
 	public void comprobarColor(String color) {
 		
 		String resultado = "BLANCO";
@@ -110,6 +118,9 @@ public class Electrodomestico {
 		this.color = resultado;
 	}
 	
+	/**
+	 * Metodo para calcular el precio final del electrodomestico
+	 */
 	public void precioFinal() {
 		
 		switch (consumoEnergetico) {

@@ -1,5 +1,8 @@
 package ejercicio04;
 
+/**
+ * Clase Television que llama a su superclase Electromestico
+ */
 class Television extends Electrodomestico{
 
 	static final double RESOLUCION_DEF = 20;
@@ -8,6 +11,9 @@ class Television extends Electrodomestico{
 	private double resolucion;
 	private boolean sintonizadorTDT;
 	
+	/**
+	 * Constructor inicial
+	 */
 	public Television() {
 		
 		super();
@@ -15,6 +21,11 @@ class Television extends Electrodomestico{
 		this.sintonizadorTDT = SINTONIZADOR_DEF;	
 	}
 	
+	/**
+	 * Constructor para precio y peso
+	 * @param precio
+	 * @param peso
+	 */
 	public Television(double precio, double peso) {
 		
 		super(precio,peso);
@@ -22,6 +33,15 @@ class Television extends Electrodomestico{
 		this.sintonizadorTDT = SINTONIZADOR_DEF;
 	}
 	
+	/**
+	 * Contructor general
+	 * @param resolucion
+	 * @param sintonizador
+	 * @param precio
+	 * @param color
+	 * @param consumoEnergetico
+	 * @param peso
+	 */
 	public Television(double resolucion, boolean sintonizador, double precio, String color, char consumoEnergetico, double peso) {
 		
 		super(precio, color, consumoEnergetico, peso);
@@ -29,6 +49,8 @@ class Television extends Electrodomestico{
 		this.sintonizadorTDT = sintonizador;
 	}
 
+	// Getters and setters
+	
 	public double getResolucion() {
 		return resolucion;
 	}
@@ -45,6 +67,9 @@ class Television extends Electrodomestico{
 		this.sintonizadorTDT = sintonizadorTDT;
 	}
 	
+	/**
+	 * Metodo para calcular el precio final llamando a la superclase
+	 */
 	public void precioFinal() {
 
 		if(resolucion > 40) {

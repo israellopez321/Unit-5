@@ -6,7 +6,6 @@ public class Ejecutable {
 
 	public static void main(String[] args) {
 		
-
 		ArrayList<Electrodomestico> cartel = new ArrayList<>();
 		
 		Lavadora trevol = new Lavadora();
@@ -33,7 +32,4 @@ public class Ejecutable {
 		
 	}
 	
-	
-	
-
 }
