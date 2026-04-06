@@ -2,21 +2,24 @@ package ejercicio04;
 
 class Television extends Electrodomestico{
 
+	static final double RESOLUCION_DEF = 20;
+	static final boolean SINTONIZADOR_DEF = false;
+	
 	private double resolucion;
 	private boolean sintonizadorTDT;
 	
 	public Television() {
 		
 		super();
-		this.resolucion = 20;
-		this.sintonizadorTDT = false;	
+		this.resolucion = RESOLUCION_DEF;
+		this.sintonizadorTDT = SINTONIZADOR_DEF;	
 	}
 	
 	public Television(double precio, double peso) {
 		
 		super(precio,peso);
-		this.resolucion = 20;
-		this.sintonizadorTDT = false;
+		this.resolucion = RESOLUCION_DEF;
+		this.sintonizadorTDT = SINTONIZADOR_DEF;
 	}
 	
 	public Television(double resolucion, boolean sintonizador, double precio, String color, char consumoEnergetico, double peso) {
