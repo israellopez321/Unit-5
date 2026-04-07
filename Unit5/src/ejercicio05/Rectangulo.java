@@ -1,13 +1,12 @@
 package ejercicio05;
 
+/**
+ * Clase Rectangulo que hereda de la clase poligono que representa un rectangulo generico con sus lados
+ */
 class Rectangulo extends Poligono{
 
-	
 	private double lado1;
 	private double lado2;
-	public double getLado1() {
-		return lado1;
-	}
 	
 	/**
 	 * Contructor general
@@ -22,6 +21,9 @@ class Rectangulo extends Poligono{
 	
 	//Getters and setters
 	
+	public double getLado1() {
+		return lado1;
+	}
 	public void setLado1(double lado1) {
 		this.lado1 = lado1;
 	}
@@ -37,6 +39,9 @@ class Rectangulo extends Poligono{
 		return "Rectángulo --> lado1:" + lado1 + ", lado2:" + lado2;
 	}
 	
+	/**
+	 * Metodo para calcular el area de un rectangulo
+	 */
 	public double calcularArea() {
 		
 		return lado1 * lado2;

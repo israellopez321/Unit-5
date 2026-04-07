@@ -1,5 +1,8 @@
 package ejercicio05;
 
+/**
+ * Clase Triangulo que hereda de la clase Poligono que representa un triangulo generico con sus tres lados
+ */
 class Triangulo extends Poligono{
 
 	
@@ -44,7 +47,10 @@ class Triangulo extends Poligono{
 	public String toString() {
 		return "Triangulo --> lado1:" + lado1 + ", lado2:" + lado2 + ", lado3:" + lado3;
 	}
-
+	
+	/**
+	 * Metodo que permite calcular el area de un triángulo mediante la formula de Heron
+	 */
 	public double calcularArea(){
 		double semiperimetro = (lado1 + lado2 + lado3) / 2.0;
 		double resultado = Math.sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3));

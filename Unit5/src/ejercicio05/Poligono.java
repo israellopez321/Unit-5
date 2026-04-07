@@ -1,7 +1,9 @@
 package ejercicio05;
-
- 	abstract class Poligono {
-
+	
+/**
+ * Clase Poligono que representa un poligono generico
+ */
+abstract class Poligono {
 
 	protected int numeroLados;
 
@@ -18,6 +20,10 @@ package ejercicio05;
 		return "numeroLados del Poligono: " + numeroLados;
 	}
 	
+	/**
+	 * Metodo abstracto para calcular el area de los poligonos 
+	 * @return area del poligono en cuestion
+	 */
 	abstract double calcularArea();
 		
 

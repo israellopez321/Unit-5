@@ -11,6 +11,9 @@ public class Ejecutable {
 		
 	}
 	
+	/**
+	 * Funcion que permite iniciar el programa
+	 */
 	public static void iniciar() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -86,5 +89,6 @@ public class Ejecutable {
 		
 		sc.close();
 	}
+	
 	
 }
