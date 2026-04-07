@@ -30,7 +30,7 @@ public class Ejecutable {
 			System.out.println("2. Introducir rectángulo");
 			System.out.println("3. Mostrar polígono");
 			System.out.println("4. Salir del programa");
-			System.out.println("Introduzca un opcion");
+			System.out.print("Introduzca un opcion: ");
 			
 			opcion = sc.nextInt();
 			sc.nextLine();
