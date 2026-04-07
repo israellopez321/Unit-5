@@ -2,8 +2,6 @@ package ejercicio04;
 
 public class Electrodomestico {
 
-
-
 	protected double precio;
 	protected String color;
 	protected char consumoEnergetico;
