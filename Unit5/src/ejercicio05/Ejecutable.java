@@ -67,17 +67,21 @@ public class Ejecutable {
 				
 				break;
 			case 3:
-				
-				for (Poligono polig: lista) {
+				if(lista.size() != 0) {
 					
-					System.out.println(polig);
-					System.out.println("Area: " + polig.calcularArea());
-					
+					for (Poligono polig: lista) {
+						
+						System.out.println(polig);
+						System.out.println("Area: " + polig.calcularArea());	
+					}
+				} else {
+					System.out.println("No hay poligonos en la lista.");
 				}
+				
 				
 				break;
 			case 4:
-				System.out.println("Cerrando programa");
+				System.out.println("Cerrando programa...");
 				
 				break;
 			default:
