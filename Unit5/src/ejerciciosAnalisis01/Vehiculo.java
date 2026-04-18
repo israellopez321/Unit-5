@@ -1,107 +1,107 @@
 package ejerciciosAnalisis01;
 
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Conducible {
 
+
+
+	protected boolean estadoMotor;
+	protected int marchaActual;
+	protected double velocidadActual;
 	
-	protected String marca;
-	protected String modelo;
-	protected String color;
-	protected String matricula;
-	protected boolean motorEncendido;
-	protected int marcha;
-	protected int velocidad;
+	/*
+	 * Contructor inicial
+	 */
+	public Vehiculo() {
+		this.estadoMotor = false;
+		this.marchaActual = 0;
+		this.velocidadActual = 0;
+	}
 	
 	/**
 	 * Constructor general
-	 * @param marca
-	 * @param modelo
-	 * @param color
-	 * @param matricula
-	 * @param motorEncendido
-	 * @param marcha
-	 * @param velocidad
+	 * @param estadoMotor
+	 * @param marchaActual
+	 * @param velocidadInicial
 	 */
-	public Vehiculo(String marca, String modelo, String color, String matricula, boolean motorEncendido, int marcha,
-			int velocidad) {
-		this.marca = marca;
-		this.modelo = modelo;
-		this.color = color;
-		this.matricula = matricula;
-		this.motorEncendido = motorEncendido;
-		this.marcha = marcha;
-		this.velocidad = velocidad;
+	public Vehiculo(boolean estadoMotor, int marchaActual, int velocidadInicial) {
+		super();
+		this.estadoMotor = estadoMotor;
+		marchaActual = marchaActual;
+		this.velocidadActual = velocidadInicial;
 	}
 	
-	//Getters and setters
-	public String getMarca() {
-		return marca;
+	//Getters y setters
+	
+	public boolean getEstadoMotor() {
+		return estadoMotor;
 	}
-	public void setMarca(String marca) {
-		this.marca = marca;
+
+	public void setEstadoMotor(boolean estadoMotor) {
+		this.estadoMotor = estadoMotor;
 	}
-	public String getModelo() {
-		return modelo;
+
+	public int getMarchaActual() {
+		return marchaActual;
 	}
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+
+	public void setMarchaActual(int marchaActual) {
+		marchaActual = marchaActual;
 	}
-	public String getColor() {
-		return color;
+
+	public double getVelocidadInicial() {
+		return velocidadActual;
 	}
-	public void setColor(String color) {
-		this.color = color;
+
+	public void setVelocidadInicial(int velocidadInicial) {
+		this.velocidadActual = velocidadInicial;
 	}
-	public String getMatricula() {
-		return matricula;
+	
+	@Override
+	public void arrancar() {
+		estadoMotor = true;
+		System.out.println("Motor encendido");
 	}
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	
+	@Override 
+	public void parar() {
+		estadoMotor = false;
+		marchaActual = 0;
+		velocidadActual = 0;
+		System.out.println("Motor apagado");
 	}
-	public boolean isMotorEncendido() {
-		return motorEncendido;
+	@Override
+	public void subirMarcha() {
+		if(marchaActual < 5) marchaActual++;
 	}
-	public void setMotorEncendido(boolean motorEncendido) {
-		this.motorEncendido = motorEncendido;
-	}
-	public int getMarcha() {
-		return marcha;
-	}
-	public void setMarcha(int marcha) {
-		this.marcha = marcha;
-	}
-	public int getVelocidad() {
-		return velocidad;
-	}
-	public void setVelocidad(int velocidad) {
-		this.velocidad = velocidad;
+	
+	@Override 
+	public void bajarMarcha() {
+		if(marchaActual > 0) marchaActual--;
+		
 	}
 	
 	/**
-	 * Metodo abstracto para mostrar información del vehiculo
-	 * @return informacion del vehiculo
+	 * Metodo que nos permite ajustar la marcha actual dependiendo de la velocidad
 	 */
-	abstract String mostrarInfo();
-	
-	public void parar() {
-		
-		motorEncendido = false;
+	public void ajustarMarcha() {
+	    if (velocidadActual < 30) marchaActual = 1;
+	    else if (velocidadActual < 50) marchaActual = 2;
+	    else if (velocidadActual < 70) marchaActual = 3;
+	    else if (velocidadActual < 100) marchaActual = 4;
+	    else marchaActual = 5;
 	}
 	
-	public void arrancar() {
-		
-		motorEncendido = true;
-	}
+	/**
+	 * Funcion que permite aumentar la velocidad del vehiculo
+	 * @param incremento
+	 */
+	public abstract void acelerar(int incremento);
 	
-	public void subirMarcha() {
-		
-		marcha++;
-	}
-	
-	public void bajarMarcha() {
-		
-		marcha--;
-	}
+	/**
+	 * Funcion que permite disminuir la velocidad del vehiculo
+	 * @param decremento
+	 */
+	public abstract void frenar(int decremento);
 	
 	
-
 }
